@@ -1,14 +1,16 @@
-package ru.sorokin.ghc.users
+package ru.sorokin.ghc.userList
 
 import com.github.terrakok.cicerone.Router
 import moxy.MvpPresenter
-import ru.sorokin.ghc.users.model.IUserItemView
-import ru.sorokin.ghc.users.model.IUserListPresenter
-import ru.sorokin.ghc.users.model.IUserListView
-import ru.sorokin.ghc.users.room.GhUser
-import ru.sorokin.ghc.users.room.GhUserRepo
+import ru.sorokin.ghc.AndroidScreens
+import ru.sorokin.ghc.model.IScreens
+import ru.sorokin.ghc.userList.model.IUserItemView
+import ru.sorokin.ghc.userList.model.IUserListPresenter
+import ru.sorokin.ghc.userList.model.IUserListView
+import ru.sorokin.ghc.userList.room.GhUser
+import ru.sorokin.ghc.userList.room.GhUserRepo
 
-class UsersPresenter(private val userRepo: GhUserRepo, private val router: Router): MvpPresenter<IUserListView>() {
+class UsersPresenter(private val userRepo: GhUserRepo, private val router: Router, private val screens: IScreens): MvpPresenter<IUserListView>() {
     class UserListPresenter: IUserListPresenter {
         val users = mutableListOf<GhUser>()
         override var itemClickListener: ((IUserItemView) -> Unit)? = null
@@ -29,7 +31,7 @@ class UsersPresenter(private val userRepo: GhUserRepo, private val router: Route
         loadData()
 
         userListPresenter.itemClickListener = {
-            //TODO: переход на экран пользователя
+            router.navigateTo(screens.userProfile(it.pos))
         }
     }
 

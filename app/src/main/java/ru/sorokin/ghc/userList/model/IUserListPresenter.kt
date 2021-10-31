@@ -1,4 +1,4 @@
-package ru.sorokin.ghc.users.model
+package ru.sorokin.ghc.userList.model
 
 import ru.sorokin.ghc.model.IListPresenter
 

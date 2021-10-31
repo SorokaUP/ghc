@@ -4,4 +4,5 @@ import com.github.terrakok.cicerone.Screen
 
 interface IScreens {
     fun userList(): Screen
+    fun userProfile(id: Int): Screen
 }

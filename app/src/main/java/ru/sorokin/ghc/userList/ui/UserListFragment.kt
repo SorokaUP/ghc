@@ -1,4 +1,4 @@
-package ru.sorokin.ghc.users.ui
+package ru.sorokin.ghc.userList.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,13 +7,14 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import moxy.MvpAppCompatFragment
 import moxy.ktx.moxyPresenter
+import ru.sorokin.ghc.AndroidScreens
 import ru.sorokin.ghc.App
 import ru.sorokin.ghc.model.IBackButtonListener
 import ru.sorokin.ghc.databinding.FragmentUserListBinding
-import ru.sorokin.ghc.users.room.GhUserRepo
-import ru.sorokin.ghc.users.model.IUserListView
-import ru.sorokin.ghc.users.UsersPresenter
-import ru.sorokin.ghc.users.UsersRVAdapter
+import ru.sorokin.ghc.userList.room.GhUserRepo
+import ru.sorokin.ghc.userList.model.IUserListView
+import ru.sorokin.ghc.userList.UsersPresenter
+import ru.sorokin.ghc.userList.UsersRVAdapter
 
 class UserListFragment: MvpAppCompatFragment(), IUserListView, IBackButtonListener {
     companion object {
@@ -21,7 +22,7 @@ class UserListFragment: MvpAppCompatFragment(), IUserListView, IBackButtonListen
     }
 
     private var binding: FragmentUserListBinding? = null
-    private val presenter by moxyPresenter { UsersPresenter(GhUserRepo(), App.instance.router) }
+    private val presenter by moxyPresenter { UsersPresenter(GhUserRepo(), App.instance.router, AndroidScreens()) }
     private var adapter: UsersRVAdapter? = null
 
     override fun onCreateView(

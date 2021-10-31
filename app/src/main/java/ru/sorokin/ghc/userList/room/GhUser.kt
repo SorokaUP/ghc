@@ -1,4 +1,4 @@
-package ru.sorokin.ghc.users.room
+package ru.sorokin.ghc.userList.room
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

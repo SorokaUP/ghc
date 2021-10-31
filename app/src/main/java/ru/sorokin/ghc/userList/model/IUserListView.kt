@@ -1,4 +1,4 @@
-package ru.sorokin.ghc.users.model
+package ru.sorokin.ghc.userList.model
 
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle

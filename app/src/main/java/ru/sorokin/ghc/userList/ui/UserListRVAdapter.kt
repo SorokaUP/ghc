@@ -1,11 +1,11 @@
-package ru.sorokin.ghc.users
+package ru.sorokin.ghc.userList
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.sorokin.ghc.databinding.LayoutUserItemBinding
-import ru.sorokin.ghc.users.model.IUserItemView
-import ru.sorokin.ghc.users.model.IUserListPresenter
+import ru.sorokin.ghc.userList.model.IUserItemView
+import ru.sorokin.ghc.userList.model.IUserListPresenter
 
 class UsersRVAdapter(private val presenter: IUserListPresenter) : RecyclerView.Adapter<UsersRVAdapter.ViewHolder>() {
 

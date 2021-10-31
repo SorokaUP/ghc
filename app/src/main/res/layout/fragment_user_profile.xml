@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".userProfile.ui.UserProfileFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/user_profile_caption"
+        android:textStyle="bold"
+        android:textSize="@dimen/user_profile_caption_size"
+        android:textAlignment="center"
+        android:layout_marginBottom="@dimen/user_profile_def_margin_bottom"/>
+
+    <TextView
+         android:id="@+id/tv_login"
+         android:layout_height="@dimen/user_profile_login_height"
+         android:layout_width="match_parent"/>
+
+</LinearLayout>
