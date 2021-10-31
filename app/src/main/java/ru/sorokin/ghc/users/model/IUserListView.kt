@@ -1,10 +1,10 @@
-package ru.sorokin.ghc
+package ru.sorokin.ghc.users.model
 
 import moxy.MvpView
 import moxy.viewstate.strategy.alias.AddToEndSingle
 
 @AddToEndSingle
-interface IMainView: MvpView {
+interface IUserListView: MvpView {
     fun init()
     fun updateList()
 }

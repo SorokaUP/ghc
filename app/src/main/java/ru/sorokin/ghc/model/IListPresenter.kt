@@ -1,4 +1,4 @@
-package ru.sorokin.ghc
+package ru.sorokin.ghc.model
 
 interface IListPresenter<V: IItemView> {
     var itemClickListener: ((V) -> Unit)?

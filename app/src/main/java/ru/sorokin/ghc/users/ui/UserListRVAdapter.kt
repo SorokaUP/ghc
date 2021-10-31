@@ -1,9 +1,11 @@
-package ru.sorokin.ghc
+package ru.sorokin.ghc.users
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.sorokin.ghc.databinding.LayoutUserItemBinding
+import ru.sorokin.ghc.users.model.IUserItemView
+import ru.sorokin.ghc.users.model.IUserListPresenter
 
 class UsersRVAdapter(private val presenter: IUserListPresenter) : RecyclerView.Adapter<UsersRVAdapter.ViewHolder>() {
 
@@ -19,7 +21,8 @@ class UsersRVAdapter(private val presenter: IUserListPresenter) : RecyclerView.A
     override fun onBindViewHolder(holder: ViewHolder, position: Int) =
         presenter.bindView(holder.apply { pos = position })
 
-    inner class ViewHolder(private val binding: LayoutUserItemBinding): RecyclerView.ViewHolder(binding.root), IUserItemView {
+    inner class ViewHolder(private val binding: LayoutUserItemBinding): RecyclerView.ViewHolder(binding.root),
+        IUserItemView {
         override var pos = -1
 
         override fun setLogin(text: String) = with(binding) {
